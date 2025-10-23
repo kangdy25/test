@@ -5,11 +5,13 @@ import * as fns from "../src/asyncFunction";
 // okPromise 테스트
 // -------------------------------------
 test("okPromise 테스트1", () => {
+    expect.assertions(1);
     const okSpy = jest.fn(okPromise);
     return expect(okSpy()).resolves.toBe("ok");
 });
 
 test("okPromise 테스트2", () => {
+    expect.assertions(1);
     const okSpy = jest.fn(okPromise);
     return okSpy().then((result) => {
         expect(result).toBe("ok");
@@ -17,12 +19,14 @@ test("okPromise 테스트2", () => {
 });
 
 test("okPromise 테스트3", async () => {
+    expect.assertions(1);
     const okSpy = jest.fn(okPromise);
     const result = await okSpy();
     expect(result).toBe("ok");
 });
 
 test("okPromise 테스트 - 스파이 심기", () => {
+    expect.assertions(1);
     jest.spyOn(fns, "okPromise").mockResolvedValue("ok");
     return expect(fns.okPromise()).resolves.toBe("ok");
 });
@@ -60,11 +64,13 @@ test("noPromise 테스트 - 스파이 심기", () => {
 // okAsync 테스트
 // -------------------------------------
 test("okAsync 테스트1", () => {
+    expect.assertions(1);
     const okSpy = jest.fn(okAsync);
     return expect(okSpy()).resolves.toBe("ok");
 });
 
 test("okAsync 테스트2", () => {
+    expect.assertions(1);
     const okSpy = jest.fn(okAsync);
     return okSpy().then((result) => {
         expect(result).toBe("ok");
@@ -72,13 +78,14 @@ test("okAsync 테스트2", () => {
 });
 
 test("okAsync 테스트3", async () => {
+    expect.assertions(1);
     const okSpy = jest.fn(okAsync);
     const result = await okSpy();
     expect(result).toBe("ok");
 });
 
 // -------------------------------------
-// noPromise 테스트
+// noAsync테스트
 // -------------------------------------
 test("noAsync 테스트1", () => {
     const noSpy = jest.fn(noAsync);
@@ -93,6 +100,7 @@ test("noAsync 테스트2", () => {
 });
 
 test("noAsync 테스트3", async () => {
+    expect.assertions(1);
     const noSpy = jest.fn(noAsync);
     try {
         const result = await noSpy();

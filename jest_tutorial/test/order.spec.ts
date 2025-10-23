@@ -12,3 +12,17 @@ test("first -> second -> third", () => {
     expect(spy1).toHaveBeenCalledBefore(spy2);
     expect(spy3).toHaveBeenCalledAfter(spy2);
 });
+
+test("인수의 일부 테스트", () => {
+    const fn = jest.fn();
+    fn({
+        a: {
+            b: {
+                c: "hello",
+            },
+            d: "bye",
+        },
+        e: ["f"],
+    });
+    expect(fn.mock.calls[0][0].a.b.c).toBe("hello");
+});

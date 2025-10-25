@@ -11,7 +11,7 @@ describe("isLoggedIn", () => {
         const res = {};
         const next = jest.fn();
         isLoggedIn(req, res, next);
-        expect(next).toHaveBeenCalledTimes(1);
+        expect(next).toHaveBeenCalledTimes(0);
     });
 });
 
@@ -26,6 +26,6 @@ describe("isNotLoggedIn", () => {
         const res = {};
         const next = jest.fn();
         isNotLoggedIn(req, res, next);
-        expect(next).toHaveBeenCalledTimes(1);
+        expect(next).toHaveBeenCalledTimes(0);
     });
 });

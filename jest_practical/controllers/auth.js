@@ -11,7 +11,7 @@ exports.join = async (req, res, next) => {
     return res.redirect("/join?error=no_nick");
   }
   if (!password) {
-    return res.redirect("/join?error=no_nick");
+    return res.redirect("/join?error=no_password");
   }
   try {
     const exUser = await User.findOne({ where: { email } });

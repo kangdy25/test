@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.17% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>40/57</span>
+                <span class='fraction'>64/64</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/3</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.17% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>40/57</span>
+                <span class='fraction'>64/64</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -120,7 +120,14 @@
 <a name='L55'></a><a href='#L55'>55</a>
 <a name='L56'></a><a href='#L56'>56</a>
 <a name='L57'></a><a href='#L57'>57</a>
-<a name='L58'></a><a href='#L58'>58</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L58'></a><a href='#L58'>58</a>
+<a name='L59'></a><a href='#L59'>59</a>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -154,23 +161,30 @@
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -182,57 +196,64 @@ const bcrypt = require("bcrypt");
 const User = require("../models/user");
 &nbsp;
 exports.join = async (req, res, next) =&gt; {
-  const { email, nick, password } = req.body;
-  if (!email) {
-    return res.redirect("/join?error=no_email");
-  }
-  if (!nick) {
-    return res.redirect("/join?error=no_nick");
-  }
-  if (!password) {
-    return res.redirect("/join?error=no_password");
-  }
-  try {
-    const exUser = await User.findOne({ where: { email } });
-    if (exUser) {
-      return res.redirect("/join?error=exist");
+    const { email, nick, password } = req.body;
+    if (!email) {
+        return res.redirect("/join?error=no_email");
     }
-    const hash = await bcrypt.hash(password, 12);
-    await User.create({
-      email,
-      nick,
-      password: hash,
-    });
-    return res.redirect("/");
-  } catch (error) {
-    console.error(error);
-    return next(error);
-  }
+    if (!nick) {
+        return res.redirect("/join?error=no_nick");
+    }
+    if (!password) {
+        return res.redirect("/join?error=no_password");
+    }
+    try {
+        const exUser = await User.findOne({ where: { email } });
+        if (exUser) {
+            return res.redirect("/join?error=exist");
+        }
+        const hash = await bcrypt.hash(password, 12);
+        await User.create({
+            email,
+            nick,
+            password: hash,
+        });
+        return res.redirect("/");
+    } catch (error) {
+        console.error(error);
+        return next(error);
+    }
 };
 &nbsp;
-exports.login = <span class="fstat-no" title="function not covered" >(req, res, next) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  passport.authenticate("local", (authError, user, info) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (authError) {</span>
-<span class="cstat-no" title="statement not covered" >      console.error(authError);</span>
-<span class="cstat-no" title="statement not covered" >      return next(authError);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    if (!user) {</span>
-<span class="cstat-no" title="statement not covered" >      return res.redirect(`/?error=${info.message}`);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    return req.login(user, (loginError) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      if (loginError) {</span>
-<span class="cstat-no" title="statement not covered" >        console.error(loginError);</span>
-<span class="cstat-no" title="statement not covered" >        return next(loginError);</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      return res.redirect("/");</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >  })(req, res, next); // 미들웨어 내의 미들웨어에는 (req, res, next)를 붙입니다.</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+const localCallback = (req, res, next) =&gt; (authError, user, info) =&gt; {
+    if (authError) {
+        console.error(authError);
+        return next(authError);
+    }
+    if (!user) {
+        return res.redirect(`/?error=${info.message}`);
+    }
+    return req.login(user, (loginError) =&gt; {
+        if (loginError) {
+            console.error(loginError);
+            return next(loginError);
+        }
+        return res.redirect("/");
+    });
+};
+exports.localCallback = localCallback;
+&nbsp;
+exports.login = (req, res, next) =&gt; {
+    passport.authenticate("local", localCallback(req, res, next))(
+        req,
+        res,
+        next
+    ); // 미들웨어 내의 미들웨어에는 (req, res, next)를 붙입니다.
+};
 &nbsp;
 exports.logout = (req, res) =&gt; {
-  req.logout(() =&gt; {
-    res.redirect("/");
-  });
+    req.logout(() =&gt; {
+        res.redirect("/");
+    });
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -241,7 +262,7 @@ exports.logout = (req, res) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-27T12:35:00.182Z
+                at 2025-10-28T10:02:25.808Z
             </div>
         <script src="../prettify.js"></script>
         <script>

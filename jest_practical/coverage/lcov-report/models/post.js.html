@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.12% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/32</span>
+                <span class='fraction'>32/32</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">28.12% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/32</span>
+                <span class='fraction'>32/32</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -99,63 +99,63 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const Sequelize = require('sequelize');
 &nbsp;
 class Post extends Sequelize.Model {
-  static <span class="fstat-no" title="function not covered" >initiate(sequelize) {</span>
-<span class="cstat-no" title="statement not covered" >    Post.init({</span>
-<span class="cstat-no" title="statement not covered" >      content: {</span>
-<span class="cstat-no" title="statement not covered" >        type: Sequelize.STRING(140),</span>
-<span class="cstat-no" title="statement not covered" >        allowNull: false,</span>
-<span class="cstat-no" title="statement not covered" >      },</span>
-<span class="cstat-no" title="statement not covered" >      img: {</span>
-<span class="cstat-no" title="statement not covered" >        type: Sequelize.STRING(200),</span>
-<span class="cstat-no" title="statement not covered" >        allowNull: true,</span>
-<span class="cstat-no" title="statement not covered" >      },</span>
-<span class="cstat-no" title="statement not covered" >    }, {</span>
-<span class="cstat-no" title="statement not covered" >      sequelize,</span>
-<span class="cstat-no" title="statement not covered" >      timestamps: true,</span>
-<span class="cstat-no" title="statement not covered" >      underscored: false,</span>
-<span class="cstat-no" title="statement not covered" >      modelName: 'Post',</span>
-<span class="cstat-no" title="statement not covered" >      tableName: 'posts',</span>
-<span class="cstat-no" title="statement not covered" >      paranoid: false,</span>
-<span class="cstat-no" title="statement not covered" >      charset: 'utf8mb4',</span>
-<span class="cstat-no" title="statement not covered" >      collate: 'utf8mb4_general_ci',</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  static initiate(sequelize) {
+    Post.init({
+      content: {
+        type: Sequelize.STRING(140),
+        allowNull: false,
+      },
+      img: {
+        type: Sequelize.STRING(200),
+        allowNull: true,
+      },
+    }, {
+      sequelize,
+      timestamps: true,
+      underscored: false,
+      modelName: 'Post',
+      tableName: 'posts',
+      paranoid: false,
+      charset: 'utf8mb4',
+      collate: 'utf8mb4_general_ci',
+    });
+  }
   
-  static <span class="fstat-no" title="function not covered" >associate(db) {</span>
-<span class="cstat-no" title="statement not covered" >    db.Post.belongsTo(db.User);</span>
-<span class="cstat-no" title="statement not covered" >    db.Post.belongsToMany(db.Hashtag, {through: 'PostHashtag'});</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
+  static associate(db) {
+    db.Post.belongsTo(db.User);
+    db.Post.belongsToMany(db.Hashtag, {through: 'PostHashtag'});
+  }
 }
 &nbsp;
 module.exports = Post;
@@ -166,7 +166,7 @@ module.exports = Post;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-28T10:57:38.800Z
+                at 2025-10-28T11:07:46.457Z
             </div>
         <script src="../prettify.js"></script>
         <script>

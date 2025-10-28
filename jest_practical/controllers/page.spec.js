@@ -6,7 +6,7 @@ const {
     renderMain,
     renderHashtag,
 } = require("./page");
-const { Post } = require("../models");
+const { Post, Hashtag } = require("../models");
 
 test("renderProfile은 res.render profile을 호출해야 한다.", () => {
     const req = {};
@@ -59,7 +59,7 @@ describe("renderMain", () => {
 });
 
 describe("renderHashtag", () => {
-    test("hashtag Querystring이 없으면 /로 돌려보낸다..", async () => {
+    test("해시태그 Querystring이 없으면 /로 돌려보낸다.", async () => {
         const res = {
             render: jest.fn(),
             redirect: jest.fn(),
@@ -70,5 +70,54 @@ describe("renderHashtag", () => {
         expect(res.render).not.toHaveBeenCalled();
         expect(res.redirect).toHaveBeenCalledWith("/");
         expect(next).not.toHaveBeenCalled();
+    });
+    test("해시태그 Querystring이 있지만 DB에 해시태그가 없으면 빈 화면을 렌더링한다.", async () => {
+        const res = {
+            render: jest.fn(),
+            redirect: jest.fn(),
+        };
+        const next = jest.fn();
+        jest.spyOn(Hashtag, "findOne").mockResolvedValue(null);
+        await renderHashtag({ query: { hashtag: "냥이" } }, res, next);
+
+        expect(res.render).toHaveBeenCalledWith("main", {
+            title: `냥이 | NodeBird`,
+            twits: [],
+        });
+        expect(next).not.toHaveBeenCalled();
+        expect(res.redirect).not.toHaveBeenCalled();
+    });
+    test("해시태그 Querystring이 있고 DB에도 해시태그가 있으면 게시글을 렌더링한다.", async () => {
+        const res = {
+            render: jest.fn(),
+            redirect: jest.fn(),
+        };
+        const next = jest.fn();
+        jest.spyOn(Hashtag, "findOne").mockResolvedValue({
+            id: 5,
+            getPosts: () => [{ id: 1 }, { id: 2 }],
+        });
+        await renderHashtag({ query: { hashtag: "냥이" } }, res, next);
+
+        expect(res.render).toHaveBeenCalledWith("main", {
+            title: `냥이 | NodeBird`,
+            twits: [{ id: 1 }, { id: 2 }],
+        });
+        expect(next).not.toHaveBeenCalled();
+        expect(res.redirect).not.toHaveBeenCalled();
+    });
+    test("해시태그 Querystring이 있으나 DB에서 findOne할 때 에러가 나면 에러처리 함수를 호출한다.", async () => {
+        const error = new Error();
+        const res = {
+            render: jest.fn(),
+            redirect: jest.fn(),
+        };
+        const next = jest.fn();
+        jest.spyOn(Hashtag, "findOne").mockRejectedValue(error);
+        await renderHashtag({ query: { hashtag: "냥이" } }, res, next);
+
+        expect(res.render).not.toHaveBeenCalled();
+        expect(res.redirect).not.toHaveBeenCalled();
+        expect(next).toHaveBeenCalledWith(error);
     });
 });

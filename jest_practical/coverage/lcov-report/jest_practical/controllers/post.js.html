@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.12% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/31</span>
+                <span class='fraction'>31/31</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">16.12% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/31</span>
+                <span class='fraction'>31/31</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -96,71 +96,71 @@
 <a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const { Post, Hashtag } = require('../models');
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">const { Post, Hashtag } = require('../models');
 &nbsp;
-exports.afterUploadImage = <span class="fstat-no" title="function not covered" >(req, res) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  console.log(req.file);</span>
-<span class="cstat-no" title="statement not covered" >  res.json({ url: `/img/${req.file.filename}` });</span>
-<span class="cstat-no" title="statement not covered" >};</span>
+exports.afterUploadImage = (req, res) =&gt; {
+  console.log(req.file);
+  res.json({ url: `/img/${req.file.filename}` });
+};
 &nbsp;
-exports.uploadPost = <span class="fstat-no" title="function not covered" >async (req, res, next) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  try {</span>
-<span class="cstat-no" title="statement not covered" >    const post = await Post.create({</span>
-<span class="cstat-no" title="statement not covered" >      content: req.body.content,</span>
-<span class="cstat-no" title="statement not covered" >      img: req.body.url,</span>
-<span class="cstat-no" title="statement not covered" >      UserId: req.user.id,</span>
-<span class="cstat-no" title="statement not covered" >    });</span>
-<span class="cstat-no" title="statement not covered" >    const hashtags = req.body.content.match(/#[^\s#]*/g);</span>
-<span class="cstat-no" title="statement not covered" >    if (hashtags) {</span>
-<span class="cstat-no" title="statement not covered" >      const result = await Promise.all(</span>
-<span class="cstat-no" title="statement not covered" >        hashtags.map(tag =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >          return Hashtag.findOrCreate({</span>
-<span class="cstat-no" title="statement not covered" >            where: { title: tag.slice(1).toLowerCase() },</span>
-<span class="cstat-no" title="statement not covered" >          })</span>
-<span class="cstat-no" title="statement not covered" >        }),</span>
-<span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >      await post.addHashtags(result.map(r =&gt; r[0]));</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
-<span class="cstat-no" title="statement not covered" >    res.redirect('/');</span>
-<span class="cstat-no" title="statement not covered" >  } catch (error) {</span>
-<span class="cstat-no" title="statement not covered" >    console.error(error);</span>
-<span class="cstat-no" title="statement not covered" >    next(error);</span>
-<span class="cstat-no" title="statement not covered" >  }</span>
-<span class="cstat-no" title="statement not covered" >};</span></pre></td></tr></table></pre>
+exports.uploadPost = async (req, res, next) =&gt; {
+  try {
+    const post = await Post.create({
+      content: req.body.content,
+      img: req.body.url,
+      UserId: req.user.id,
+    });
+    const hashtags = req.body.content.match(/#[^\s#]*/g);
+    if (hashtags) {
+      const result = await Promise.all(
+        hashtags.map(tag =&gt; {
+          return Hashtag.findOrCreate({
+            where: { title: tag.slice(1).toLowerCase() },
+          })
+        }),
+      );
+      await post.addHashtags(result.map(r =&gt; r[0]));
+    }
+    res.redirect('/');
+  } catch (error) {
+    console.error(error);
+    next(error);
+  }
+};</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-10-29T04:47:24.903Z
+                at 2025-10-30T06:46:31.470Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
